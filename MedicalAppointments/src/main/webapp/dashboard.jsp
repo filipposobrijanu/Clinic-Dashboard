@@ -312,29 +312,28 @@ html {
 				</div>
 				<div class="container mt-3">
 				<div class="d-flex flex-wrap gap-2 justify-content-start">
-					<a href="BookAppointment.jsp" class="btn shadow rounded-5 me-2 mb-2"><b>ΚΛΕΙΣΕ
-							ΡΑΝΤΕΒΟΥ</b></a>
+
 							<%
 
 							    if ("patient".equals(role)) {
 							%>
+												<a href="BookAppointment.jsp" class="btn shadow rounded-5 me-2 mb-2"><b>ΚΛΕΙΣΕ
+							ΡΑΝΤΕΒΟΥ</b></a>
 							   							    <a href="viewAppointments.jsp" class="btn shadow me-2 mb-2 rounded-5"><b>ΠΡΟΒΟΛΗ
+							ΡΑΝΤΕΒΟΥ</b></a> 
+														<a href="CancelAppointment.jsp" class="btn shadow me-2 mb-2 rounded-5"><b>ΑΚΥΡΩΣΗ
 							ΡΑΝΤΕΒΟΥ</b></a> 
 
 							<%
 							    } else if ("doctor".equals(role)) {
 							%>
-							    							    <a href="viewAppointments.jsp" class="btn shadow me-2 mb-2 rounded-5"><b>ΠΡΟΒΟΛΗ
-							ΡΑΝΤΕΒΟΥ</b></a> 
-														<a href="CancelAppointment.jsp" class="btn shadow me-2 mb-2 rounded-5"><b>ΑΚΥΡΩΣΗ
-							ΡΑΝΤΕΒΟΥ</b></a> 
+							    									   							    <a href="viewAppointments.jsp" class="btn shadow me-2 mb-2 rounded-5"><b>ΠΡΟΒΟΛΗ
+							ΡΑΝΤΕΒΟΥ</b></a> 	
+			    
 							<%
 							    } else if ("admin".equals(role)) {
 							%>
-							    <a href="viewAppointments.jsp" class="btn shadow me-2 mb-2 rounded-5"><b>ΠΡΟΒΟΛΗ
-							ΡΑΝΤΕΒΟΥ</b></a> 
-														<a href="CancelAppointment.jsp" class="btn shadow me-2 mb-2 rounded-5"><b>ΑΚΥΡΩΣΗ
-							ΡΑΝΤΕΒΟΥ</b></a> 
+
 														<a href="AdminRegisterDoctor.jsp" class="btn shadow mb-2 rounded-5"><b>ΠΡΟΣΘΗΚΗ
 							ΙΑΤΡΟΥ</b></a>
 							<%

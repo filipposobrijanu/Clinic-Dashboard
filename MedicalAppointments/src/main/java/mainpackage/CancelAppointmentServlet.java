@@ -83,10 +83,10 @@ public class CancelAppointmentServlet extends HttpServlet {
                 while (rs2.next()) {
                     htmlResponse.append("<li class=\"list-group-item rounded-4 shadow mb-3 appointment-item\">");
                     htmlResponse.append("<div class=\"appointment-text\">");
-                    htmlResponse.append("<b>ID: ").append(rs2.getInt("id"));
-                    htmlResponse.append(", Ειδικότητα: ").append(rs2.getString("specialty"));
-                    htmlResponse.append(", Ημερομηνία/Ώρα: ").append(rs2.getString("date_time"));
-                    htmlResponse.append(", Κατάσταση: ").append(rs2.getString("status")).append("</b>");
+                    htmlResponse.append("<b>ID: </b>").append(rs2.getInt("id"));
+                    htmlResponse.append(",<b> Ειδικότητα: </b>").append(rs2.getString("specialty"));
+                    htmlResponse.append(",<b> Ημερομηνία/Ώρα: </b>").append(rs2.getString("date_time"));
+                    htmlResponse.append(",<b> Κατάσταση: </b>").append(rs2.getString("status")).append("</b>");
                     htmlResponse.append("</div>");
                     htmlResponse.append("<input type=\"radio\" name=\"appointment_id\" value=\"").append(rs2.getInt("id")).append("\">");
                     htmlResponse.append("</li>");
@@ -97,7 +97,7 @@ public class CancelAppointmentServlet extends HttpServlet {
                 return;
             } else {
                 response.setContentType("text/html; charset=UTF-8");
-                response.getWriter().write("<li class=\"list-group-item rounded-4 shadow mb-2\">Δεν βρέθηκε ασθενής για αυτόν τον χρήστη.</li>");
+                response.getWriter().write("<li class=\"list-group-item rounded-4 shadow mb-2\"><b>Δεν βρέθηκε</b> ασθενής για αυτόν τον χρήστη.</li>");
                 return;
             }
 

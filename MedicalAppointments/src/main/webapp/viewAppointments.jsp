@@ -494,6 +494,10 @@ a {
 	});
 </script>
    <script>
+   <%
+   String role = (String) session.getAttribute("role");
+   if ("patient".equals(role)) {
+%>
         window.addEventListener('load', function() {
             fetch('ViewAppointmentsServlet')
                 .then(response => response.text())
@@ -506,6 +510,24 @@ a {
                 });
             document.body.classList.add('loaded');
         });
+		<%
+   } else if ("doctor".equals(role)) {
+%>
+window.addEventListener('load', function() {
+    fetch('ViewDoctorAppointmentsServlet')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('appointmentsList').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Σφάλμα κατά τη φόρτωση των ραντεβού:', error);
+            document.getElementById('appointmentsList').innerHTML = '<li class="list-group-item rounded-4 shadow-sm mb-2 text-danger">Υπήρξε σφάλμα κατά τη φόρτωση των ραντεβού.</li>';
+        });
+    document.body.classList.add('loaded');
+});
+<%
+   }
+%>
     </script>
 </head>
 <body class="bg-light">

@@ -38,16 +38,7 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("name", name);
                 session.setAttribute("role", role);
 
-                // Ανακατεύθυνση ανάλογα με ρόλο
-                if ("patient".equals(role)) {
-                    response.sendRedirect("dashboard.jsp");
-                } else if ("doctor".equals(role)) {
-                    response.sendRedirect("doctorDashboard.jsp");
-                } else if ("admin".equals(role)) {
-                    response.sendRedirect("adminDashboard.jsp");
-                } else {
-                    response.getWriter().println("Ρόλος χρήστη άγνωστος.");
-                }
+                response.sendRedirect("dashboard.jsp");
 
             } else {
                 response.sendRedirect("login.jsp?error=true");

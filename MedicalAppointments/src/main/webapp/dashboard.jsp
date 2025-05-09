@@ -292,14 +292,57 @@ html {
 				<div class="alert text-white shadow rounded-4 fs-4"
 					style="background: linear-gradient(55deg, #6556FE 0%,#6556FE 35%, #aba4f5 55%); text-shadow: 0 0 10px #1b1744, 0 0 20px #1b1744;">
 					Καλώς ήρθες, <b><%=user%></b>!
+					<%
+					    String role = (String) session.getAttribute("role");
+					    if ("patient".equals(role)) {
+					%>
+					    <span class="fs-6" style="opacity: 0.6;">&nbsp&nbsp&nbspΑσθενής</span>
+					<%
+					    } else if ("doctor".equals(role)) {
+					%>
+					    <span class="fs-6" style="opacity: 0.6;">&nbsp&nbsp&nbspΓιατρός</span>
+					<%
+					    } else if ("admin".equals(role)) {
+					%>
+					    <span class="fs-6" style="opacity: 0.6;">&nbsp&nbsp&nbspΔιαχειριστής</span>
+					<%
+					    }
+					%>
+					
 				</div>
 				<div class="container mt-3">
 				<div class="d-flex flex-wrap gap-2 justify-content-start">
 					<a href="BookAppointment.jsp" class="btn shadow rounded-5 me-2 mb-2"><b>ΚΛΕΙΣΕ
-							ΡΑΝΤΕΒΟΥ</b></a> <a href="viewAppointments.jsp" class="btn shadow me-2 mb-2 rounded-5"><b>ΠΡΟΒΟΛΗ
-							ΡΑΝΤΕΒΟΥ</b></a> <a href="CancelAppointment.jsp" class="btn shadow me-2 mb-2 rounded-5"><b>ΑΚΥΡΩΣΗ
-							ΡΑΝΤΕΒΟΥ</b></a> <a href="AdminRegisterDoctor.jsp" class="btn shadow mb-2 rounded-5"><b>ΠΡΟΣΘΗΚΗ
+							ΡΑΝΤΕΒΟΥ</b></a>
+							<%
+
+							    if ("patient".equals(role)) {
+							%>
+							   							    <a href="viewAppointments.jsp" class="btn shadow me-2 mb-2 rounded-5"><b>ΠΡΟΒΟΛΗ
+							ΡΑΝΤΕΒΟΥ</b></a> 
+
+							<%
+							    } else if ("doctor".equals(role)) {
+							%>
+							    							    <a href="viewAppointments.jsp" class="btn shadow me-2 mb-2 rounded-5"><b>ΠΡΟΒΟΛΗ
+							ΡΑΝΤΕΒΟΥ</b></a> 
+														<a href="CancelAppointment.jsp" class="btn shadow me-2 mb-2 rounded-5"><b>ΑΚΥΡΩΣΗ
+							ΡΑΝΤΕΒΟΥ</b></a> 
+							<%
+							    } else if ("admin".equals(role)) {
+							%>
+							    <a href="viewAppointments.jsp" class="btn shadow me-2 mb-2 rounded-5"><b>ΠΡΟΒΟΛΗ
+							ΡΑΝΤΕΒΟΥ</b></a> 
+														<a href="CancelAppointment.jsp" class="btn shadow me-2 mb-2 rounded-5"><b>ΑΚΥΡΩΣΗ
+							ΡΑΝΤΕΒΟΥ</b></a> 
+														<a href="AdminRegisterDoctor.jsp" class="btn shadow mb-2 rounded-5"><b>ΠΡΟΣΘΗΚΗ
 							ΙΑΤΡΟΥ</b></a>
+							<%
+							    }
+							%>
+
+
+
 				</div>
 				</div>
 			</div>

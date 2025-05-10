@@ -485,6 +485,7 @@ a {
 	transition: all 90ms ease-out;
 }
 }
+
 </style>
 <script>
 	window.addEventListener('load', function() {

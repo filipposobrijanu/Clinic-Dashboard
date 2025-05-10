@@ -88,7 +88,9 @@ public class CancelAppointmentServlet extends HttpServlet {
                     htmlResponse.append(",<b> Ημερομηνία/Ώρα: </b>").append(rs2.getString("date_time"));
                     htmlResponse.append(",<b> Κατάσταση: </b>").append(rs2.getString("status")).append("</b>");
                     htmlResponse.append("</div>");
+                    htmlResponse.append("<div style=\"margin:0.85em;\" ></div>");
                     htmlResponse.append("<input type=\"radio\" name=\"appointment_id\" value=\"").append(rs2.getInt("id")).append("\">");
+                    htmlResponse.append("<b>&nbsp&nbspΕπιλογή</b>");
                     htmlResponse.append("</li>");
                 }
 

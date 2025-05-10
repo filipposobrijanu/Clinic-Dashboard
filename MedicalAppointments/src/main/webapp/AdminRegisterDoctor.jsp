@@ -578,7 +578,7 @@ a {
 				</form>
 
     			<% if (request.getParameter("success") != null) { %>
-        			<p style="color:green;">Ο γιατρός καταχωρήθηκε επιτυχώς.</p>
+        			<p style="color:green;">Ο γιατρός καταχωρήθηκε επιτυχώς</p>
     			<% } %>
 			</div>
 			<div class=" text-center text-white mt-5 mb-3">

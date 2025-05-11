@@ -498,6 +498,15 @@ a {
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('appointmentsList').innerHTML = data;
+                    // Disable the button initially
+                    document.getElementById('cancelButton').disabled = true;
+                    // Add event listener to the radio buttons
+                    const radioButtons = document.querySelectorAll('input[name="appointment_id"]');
+                    radioButtons.forEach(radio => {
+                        radio.addEventListener('change', function() {
+                            document.getElementById('cancelButton').disabled = false;
+                        });
+                    });
                 })
                 .catch(error => {
                     console.error('Σφάλμα κατά τη φόρτωση των ραντεβού:', error);
@@ -532,7 +541,7 @@ a {
                 <ul id="appointmentsList" class="list-group">
                     <li class="list-group-item rounded-4 shadow-sm mb-2">Φόρτωση ραντεβού...</li>
                 </ul>
-					<button type="submit" class="btn text-center shadow rounded-5 w-100 mt-3">
+					<button type="submit" id="cancelButton" class="btn text-center shadow rounded-5 w-100 mt-3" >
 						<b>ΑΚΥΡΩΣΗ ΕΠΙΛΕΓΜΕΝΟΥ</b>
 					</button>
 			

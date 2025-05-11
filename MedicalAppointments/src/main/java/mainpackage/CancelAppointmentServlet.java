@@ -42,16 +42,13 @@ public class CancelAppointmentServlet extends HttpServlet {
                             "UPDATE appointments SET status = 'cancelled' WHERE id = ?");
                     update.setInt(1, appointmentId);
                     update.executeUpdate();
-                    response.sendRedirect("ViewAppointmentsServlet"); // Ανακατεύθυνση για προβολή των ενημερωμένων ραντεβού
+                    response.sendRedirect("CancelAppointment.jsp"); // Ανακατεύθυνση για προβολή των ενημερωμένων ραντεβού
                 } else {
-                    response.setContentType("text/html; charset=UTF-8");
-                    response.getWriter().write("<div class='alert alert-danger'>Δεν μπορείτε να ακυρώσετε το ραντεβού (λιγότερο από 3 μέρες).</div>");
+                    response.sendRedirect("error404_cancelappointment.jsp");
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            response.setContentType("text/html; charset=UTF-8");
-            response.getWriter().write("<div class='alert alert-danger'>Σφάλμα στη βάση: " + e.getMessage() + "</div>");
+            response.sendRedirect("error404_cancelappointment.jsp");
         }
     }
 
@@ -90,7 +87,7 @@ public class CancelAppointmentServlet extends HttpServlet {
                     htmlResponse.append("</div>");
                     htmlResponse.append("<div style=\"margin:0.85em;\" ></div>");
                     htmlResponse.append("<input type=\"radio\" name=\"appointment_id\" value=\"").append(rs2.getInt("id")).append("\">");
-                    htmlResponse.append("<b>&nbsp&nbspΕπιλογή</b>");
+                    htmlResponse.append("<b>&nbsp&nbsp Επιλογή</b>");
                     htmlResponse.append("</li>");
                 }
 
@@ -98,15 +95,13 @@ public class CancelAppointmentServlet extends HttpServlet {
                 response.getWriter().write(htmlResponse.toString());
                 return;
             } else {
-                response.setContentType("text/html; charset=UTF-8");
-                response.getWriter().write("<li class=\"list-group-item rounded-4 shadow mb-2\"><b>Δεν βρέθηκε</b> ασθενής για αυτόν τον χρήστη.</li>");
-                return;
+
+                response.sendRedirect("error404_cancelappointment.jsp");
+
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            response.setContentType("text/html; charset=UTF-8");
-            response.getWriter().write("<li class=\"list-group-item rounded-4 shadow mb-2 text-danger\">Σφάλμα κατά την ανάκτηση των ραντεβού: " + e.getMessage() + "</li>");
+            response.sendRedirect("error404_cancelappointment.jsp");
         }
     }
 }

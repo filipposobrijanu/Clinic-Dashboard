@@ -53,11 +53,10 @@ public class BookAppointmentServlet extends HttpServlet {
 
                 response.sendRedirect("dashboard.jsp");
             } else {
-                response.getWriter().println("Not found patient.");
+                response.sendRedirect("error404_bookappointment.jsp");
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            response.getWriter().println("Fail " + e.getMessage());
+            response.sendRedirect("error404_bookappointment.jsp");
         }
     }
 }

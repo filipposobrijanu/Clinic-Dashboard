@@ -56,12 +56,11 @@ public class AdminRegisterDoctorServlet extends HttpServlet {
                 response.sendRedirect("dashboard.jsp");
 
             } else {
-                response.getWriter().println("Σφάλμα: Δεν δημιουργήθηκε ο γιατρός.");
+                response.sendRedirect("error404_registerdoctor.jsp");
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            response.getWriter().println("Σφάλμα βάσης: " + e.getMessage());
+            response.sendRedirect("error404_registerdoctor.jsp");
         }
     }
 }

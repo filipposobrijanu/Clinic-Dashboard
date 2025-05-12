@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <html>
 <head>
-<title>Σύνδεση Χρήστη | Ραντεβού Clinic</title>
+<title>Σύνδεση Χρήστη | MedicalAppointments</title>
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -36,91 +36,13 @@
 	background-color: #6556FE !important;
 }
 
-.comfortaa-
 
-
-
-
-<
-uniquifier
->
-{
-font-family
-
-
-
-
-:
-
-
- 
-
-
-"
-Comfortaa
-
-
-
-
-"
-,
-sans-serif
-
-
-
-
-;
-font-optical-sizing
-
-
-
-
-:
-
-
- 
-
-
-auto
-
-
-
-
-;
-font-weight
-
-
-
-
-:
-
-
- 
-
-
-<
-weight
->
-;
-font-style
-
-
-
-
-:
-
-
- 
-
-
-normal
-
-
-
-
-;
+.comfortaa-<uniquifier> {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
-
 
 
 ::selection {
@@ -338,7 +260,6 @@ a:hover {
 								</div>
 							</form>
 
-
 							<%
 
 							if (request.getParameter("error") != null) {
@@ -364,7 +285,6 @@ a:hover {
 				</div>
 			</div>
 			
-			
 			<div class=" sticky-bottom">
 			<div class="row text-white justify-content-center p-3" style="background-color: #1b1744; font-size: 0.8rem;">
 					<div class="col-auto">
@@ -378,14 +298,7 @@ a:hover {
 			</div>
 			
 		</div>
-		
+<script src="preventRightClick.js"></script>
 
-<script>
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-
-  });
-  
-</script>
 </body>
 </html>

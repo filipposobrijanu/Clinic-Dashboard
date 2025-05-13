@@ -25,7 +25,7 @@ public class CancelAppointmentServlet extends HttpServlet {
         int appointmentId = Integer.parseInt(request.getParameter("appointment_id"));
 
         try (Connection conn = DatabaseConnection.getConnection()) {
-            // Έλεγχος αν είναι 3+ μέρες μετά
+
             PreparedStatement ps = conn.prepareStatement(
                     "SELECT date_time FROM appointments WHERE id = ?");
             ps.setInt(1, appointmentId);
@@ -42,7 +42,7 @@ public class CancelAppointmentServlet extends HttpServlet {
                             "UPDATE appointments SET status = 'cancelled' WHERE id = ?");
                     update.setInt(1, appointmentId);
                     update.executeUpdate();
-                    response.sendRedirect("CancelAppointment.jsp"); // Ανακατεύθυνση για προβολή των ενημερωμένων ραντεβού
+                    response.sendRedirect("CancelAppointment.jsp"); 
                 } else {
                     response.sendRedirect("error404_cancelappointment.jsp");
                 }
@@ -72,7 +72,7 @@ public class CancelAppointmentServlet extends HttpServlet {
                 PreparedStatement ps2 = conn.prepareStatement(
                         "SELECT a.id, a.date_time, a.status, d.specialty " +
                                 "FROM appointments a JOIN doctors d ON a.doctor_id = d.id " +
-                                "WHERE a.patient_id = ? AND a.status = 'scheduled'"); // Εμφάνιση μόνο προγραμματισμένων ραντεβού
+                                "WHERE a.patient_id = ? AND a.status = 'scheduled'"); 
                 ps2.setInt(1, patientId);
                 ResultSet rs2 = ps2.executeQuery();
 

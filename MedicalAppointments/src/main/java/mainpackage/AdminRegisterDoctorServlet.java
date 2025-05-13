@@ -20,7 +20,7 @@ public class AdminRegisterDoctorServlet extends HttpServlet {
         String specialty = request.getParameter("specialty");
 
         try (Connection conn = DatabaseConnection.getConnection()) {
-            // Έλεγχος για υπάρχον username
+
             PreparedStatement checkUser = conn.prepareStatement("SELECT id FROM users WHERE username = ?");
             checkUser.setString(1, username);
             ResultSet existing = checkUser.executeQuery();
@@ -30,7 +30,7 @@ public class AdminRegisterDoctorServlet extends HttpServlet {
                 return;
             }
 
-            // 1. Εισαγωγή στον πίνακα users
+
             PreparedStatement userInsert = conn.prepareStatement(
                 "INSERT INTO users (username, password, name, surname, role) VALUES (?, ?, ?, ?, 'doctor')",
                 Statement.RETURN_GENERATED_KEYS
@@ -45,7 +45,7 @@ public class AdminRegisterDoctorServlet extends HttpServlet {
             if (generatedKeys.next()) {
                 int userId = generatedKeys.getInt(1);
 
-                // 2. Εισαγωγή στον πίνακα doctors
+
                 PreparedStatement doctorInsert = conn.prepareStatement(
                     "INSERT INTO doctors (user_id, specialty) VALUES (?, ?)"
                 );

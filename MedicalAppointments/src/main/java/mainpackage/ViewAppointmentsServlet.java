@@ -49,7 +49,7 @@ public class ViewAppointmentsServlet extends HttpServlet {
 
                 response.setContentType("text/html; charset=UTF-8");
                 response.getWriter().write(htmlResponse.toString());
-                return; // Σημαντικό: μην κάνετε forward αν στέλνετε απευθείας την απάντηση
+                return; 
             } else {
                 response.setContentType("text/html; charset=UTF-8");
                 response.getWriter().write("<li class=\"list-group-item rounded-4 shadow mb-2\"><b>Δεν βρέθηκε</b> ασθενής για αυτόν τον χρήστη.</li>");

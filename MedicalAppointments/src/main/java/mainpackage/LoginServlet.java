@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         try (Connection conn = DatabaseConnection.getConnection()) {
-            // Φέρνουμε τον χρήστη από τη βάση
+
             PreparedStatement ps = conn.prepareStatement(
                 "SELECT id, name, role FROM users WHERE username= ? AND password= ?");
             ps.setString(1, username);
@@ -31,10 +31,9 @@ public class LoginServlet extends HttpServlet {
                 String name = rs.getString("name");
                 String role = rs.getString("role");
 
-                // Δημιουργία session
                 HttpSession session = request.getSession();
                 session.setAttribute("user", username);
-                session.setAttribute("user_id", userId);     // 🔑 ΧΡΗΣΙΜΟ για patient_id lookup
+                session.setAttribute("user_id", userId); 
                 session.setAttribute("name", name);
                 session.setAttribute("role", role);
 

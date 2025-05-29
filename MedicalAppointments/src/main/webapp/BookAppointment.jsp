@@ -18,20 +18,25 @@ if (session.getAttribute("user") == null) {
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="description" content="Ραντεβού Clinic: Διαχειριστείτε ραντεβού, εγγραφές ιατρών και ασθενών εύκολα και γρήγορα.">
-<meta name="keywords" content="Ραντεβού Clinic, διαχείριση ιατρών, εγγραφή ασθενών, ιατρικό dashboard, υγεία">
+<meta name="description"
+	content="Ραντεβού Clinic: Διαχειριστείτε ραντεβού, εγγραφές ιατρών και ασθενών εύκολα και γρήγορα.">
+<meta name="keywords"
+	content="Ραντεβού Clinic, διαχείριση ιατρών, εγγραφή ασθενών, ιατρικό dashboard, υγεία">
 <meta name="robots" content="index, follow">
 <meta http-equiv="content-language" content="el">
 <meta name="geo.region" content="GR">
 <meta name="geo.placename" content="Greece">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ραντεβού Clinic - Διαχείριση Ιατρών & Ασθενών">
-<meta name="twitter:description" content="Εύκολη διαχείριση ραντεβού και εγγραφών για ιατρούς και ασθενείς.">
-<meta name="twitter:image" content="https://www.rantevouclinic.gr/images/logo.jpg">
+<meta name="twitter:title"
+	content="Ραντεβού Clinic - Διαχείριση Ιατρών & Ασθενών">
+<meta name="twitter:description"
+	content="Εύκολη διαχείριση ραντεβού και εγγραφών για ιατρούς και ασθενείς.">
+<meta name="twitter:image"
+	content="https://www.rantevouclinic.gr/images/logo.jpg">
 <meta name="twitter:site" content="@RantevouClinic">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" >
+<link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Comfortaa:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
 	rel="stylesheet">
@@ -46,11 +51,43 @@ if (session.getAttribute("user") == null) {
 	background-color: #6556FE !important;
 }
 
-.comfortaa-<uniquifier> {
-  font-family: "Comfortaa", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+.comfortaa-
+<
+uniquifier
+>
+{
+font-family
+:
+ 
+"
+Comfortaa
+"
+,
+sans-serif
+;
+
+  
+font-optical-sizing
+:
+ 
+auto
+;
+
+  
+font-weight
+:
+ 
+<
+weight
+>
+;
+font-style
+:
+ 
+normal
+;
+
+
 }
 body {
 	opacity: 0;
@@ -64,36 +101,44 @@ body.loaded {
 body {
 	background: linear-gradient(-45deg, #6556FE 0%, #aba4f5 35%, #6556FE 70%);
 	background-size: 400% 400%;
-
 	animation: gradient 8s ease infinite;
 	height: 100vh;
 	font-family: 'Comfortaa', sans-serif;
-	
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+@
+keyframes gradient { 0% {
+	background-position: 0% 50%;
+}
+
+50
+%
+{
+background-position
+:
+100%
+50%;
+}
+100
+%
+{
+background-position
+:
+0%
+50%;
+}
 }
 
 /* Animations */
+@
+keyframes spin {from { transform:rotate(0deg);
+	
+}
 
-@keyframes spin {
-  
-  from {
-    transform: rotate( 0deg );
-  }
-  
-  to {
-    transform: rotate( 360deg );
-  }
+to {
+	transform: rotate(360deg);
+}
+
 }
 
 /* Global */
@@ -167,17 +212,18 @@ a {
 		<div class="container mt-5">
 			<div class="card shadow p-4 rounded-5">
 				<div class="d-flex justify-content-end">
-				<a href="dashboard.jsp">
-					<button id="backbtn" class="btn  text-center shadow rounded-5 mb-3 "
-						style="width: 8rem;">
-						 <b>ΠΙΣΩ</b>
-						
-					</button>
+					<a href="dashboard.jsp">
+						<button id="backbtn"
+							class="btn  text-center shadow rounded-5 mb-3 "
+							style="width: 8rem;">
+							<b>ΠΙΣΩ</b>
+
+						</button>
 					</a>
 				</div>
 
 				<div class="alert text-white shadow rounded-4 fs-4"
-					style="background: linear-gradient(55deg, #6556FE 0%, #6556FE 25%, #aba4f5 45%);  text-shadow: 0 0 10px #1b1744, 0 0 20px #1b1744;">
+					style="background: linear-gradient(55deg, #6556FE 0%, #6556FE 25%, #aba4f5 45%); text-shadow: 0 0 10px #1b1744, 0 0 20px #1b1744;">
 					<b>Κλείσε Ραντεβού</b>
 
 
@@ -211,6 +257,6 @@ a {
 			</div>
 		</div>
 	</div>
-<script src="preventRightClick.js"></script>
+	<script src="preventRightClick.js"></script>
 </body>
 </html>

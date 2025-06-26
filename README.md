@@ -1,7 +1,7 @@
 
 # 🏥 Medical Appointment Management System
 
-A web-based system for managing medical appointments, built using **Java Servlets**, **JSP**, and **MySQL**, and deployed on **Apache Tomcat**. The system supports three user roles: **Patients**, **Doctors**, and **Administrators**, each with specific functionality and access rights.
+A comprehensive **web-based platform** designed to streamline the scheduling and management of medical appointments, developed using **Java EE technologies** including **Java Servlets**, **JavaServer Pages (JSP)**, and **MySQL** for robust database management. The system is deployed on **Apache Tomcat**, ensuring reliable and scalable performance for healthcare providers.
 
 ---
 
